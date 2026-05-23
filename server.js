@@ -6,20 +6,25 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const app = express();
-const PORT = 3000;
-const SECRET_KEY = 'super-secret-key-for-jwt-do-not-use-in-prod';
+const PORT = process.env.PORT || 3000;
+const SECRET_KEY = process.env.JWT_SECRET || 'super-secret-key-for-jwt-do-not-use-in-prod';
 
 app.use(cors());
 app.use(express.json());
 // Servir arquivos estáticos da pasta /public
 app.use(express.static(path.join(__dirname, 'public')));
 
-const USERS_FILE = path.join(__dirname, 'users.json');
-const TASKS_FILE = path.join(__dirname, 'tasks.json');
-const REVOKED_TOKENS_FILE = path.join(__dirname, 'revoked_tokens.json');
+const DATA_DIR = process.env.DATA_DIR || __dirname;
+const USERS_FILE = path.join(DATA_DIR, 'users.json');
+const TASKS_FILE = path.join(DATA_DIR, 'tasks.json');
+const REVOKED_TOKENS_FILE = path.join(DATA_DIR, 'revoked_tokens.json');
 
 // Helper para criar os arquivos caso não existam
 function ensureFileExists(filePath, defaultData) {
+  const dir = path.dirname(filePath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
   if (!fs.existsSync(filePath)) {
     fs.writeFileSync(filePath, JSON.stringify(defaultData, null, 2));
   }
@@ -266,5 +271,5 @@ app.patch('/api/tasks/:id/complete', authenticateToken, (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
