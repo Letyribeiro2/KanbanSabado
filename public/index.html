@@ -9,20 +9,22 @@
 
     :root {
       /* Color Palette from Requirements */
-      --bg-primary: #0a0a0f;
-      --bg-secondary: #111118;
-      --bg-card: #16161f;
-      --bg-hover: #1e1e2a;
-      --border: #2a2a3a;
-      --accent: #6c63ff;
-      --accent-dim: rgba(108, 99, 255, 0.15);
-      --text-primary: #e8e8f0;
-      --text-secondary: #8888aa;
-      --text-muted: #55556a;
-      --danger: #ff4444;
-      --danger-dim: rgba(255, 68, 68, 0.12);
-      --success: #22c55e;
-      --warning: #f59e0b;
+      --bg-primary: #f7f8fc;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --bg-hover: #f0f2fa;
+      --border: #e2e8f0;
+      --accent: #8b80f9;
+      --accent-dim: rgba(139, 128, 249, 0.12);
+      --text-primary: #2d3748;
+      --text-secondary: #718096;
+      --text-muted: #a0aec0;
+      --danger: #ff8b94;
+      --danger-dim: rgba(255, 139, 148, 0.12);
+      --success: #a8e6cf;
+      --success-dim: rgba(168, 230, 207, 0.12);
+      --warning: #ffd3b6;
+      --warning-dim: rgba(255, 211, 182, 0.12);
       
       --font-mono: 'JetBrains Mono', monospace;
     }
@@ -60,7 +62,7 @@
       padding: 2.5rem;
       width: 100%;
       max-width: 420px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(139, 128, 249, 0.06), 0 1px 8px rgba(0,0,0,0.04);
     }
 
     .auth-tabs {
@@ -317,7 +319,7 @@
       justify-content: space-between;
       align-items: center;
       font-weight: bold;
-      background-color: rgba(0,0,0,0.2);
+      background-color: rgba(0,0,0,0.02);
     }
 
     .task-count {
@@ -359,8 +361,8 @@
 
     .task-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      border-color: var(--text-muted);
+      box-shadow: 0 10px 20px rgba(139, 128, 249, 0.08);
+      border-color: var(--accent);
     }
 
     .task-card:active {
@@ -417,9 +419,9 @@
       letter-spacing: 0.5px;
     }
 
-    .priority-low { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
-    .priority-medium { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
-    .priority-high { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .priority-low { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+    .priority-medium { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+    .priority-high { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
 
     .badge-overdue {
       background: var(--danger);
@@ -491,7 +493,7 @@
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.8);
+      background: rgba(15, 23, 42, 0.3);
       display: none;
       align-items: center;
       justify-content: center;
@@ -506,7 +508,7 @@
       max-width: 500px;
       padding: 2.5rem;
       border-radius: 6px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
     }
 
     .modal-header {
@@ -593,14 +595,14 @@
           </div>
         </div>
         <div class="dash-card">
-          <div class="dash-icon" style="color: var(--warning); background: rgba(245, 158, 11, 0.15)">⚡</div>
+          <div class="dash-icon" style="color: var(--warning); background: var(--warning-dim)">⚡</div>
           <div class="dash-info">
             <h3 id="count-doing">0</h3>
             <p>Em Andamento</p>
           </div>
         </div>
         <div class="dash-card">
-          <div class="dash-icon" style="color: var(--success); background: rgba(34, 197, 94, 0.15)">✓</div>
+          <div class="dash-icon" style="color: var(--success); background: var(--success-dim)">✓</div>
           <div class="dash-info">
             <h3 id="count-done">0</h3>
             <p>Concluídas</p>

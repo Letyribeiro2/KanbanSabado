@@ -16,11 +16,11 @@
     "userId": "1779543860073",
     "title": "Teste",
     "description": "123",
-    "status": "todo",
+    "status": "done",
     "dueDate": "2026-05-01",
-    "priority": "high",
+    "priority": "low",
     "completed": false,
     "createdAt": "2026-05-23T13:44:57.203Z",
-    "updatedAt": "2026-05-23T13:47:15.554Z"
+    "updatedAt": "2026-05-23T17:24:27.790Z"
   }
 ]
