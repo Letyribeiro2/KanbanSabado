@@ -10,5 +10,17 @@
     "completed": false,
     "createdAt": "2026-05-16T19:56:13.940Z",
     "updatedAt": "2026-05-16T19:59:01.165Z"
+  },
+  {
+    "id": "1779543897203",
+    "userId": "1779543860073",
+    "title": "Teste",
+    "description": "123",
+    "status": "todo",
+    "dueDate": "2026-05-01",
+    "priority": "high",
+    "completed": false,
+    "createdAt": "2026-05-23T13:44:57.203Z",
+    "updatedAt": "2026-05-23T13:47:15.554Z"
   }
 ]
